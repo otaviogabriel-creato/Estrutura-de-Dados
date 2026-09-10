@@ -54,3 +54,21 @@ console.log(p.topoPilha());
 console.log(p);
 console.log(p.tamanho());
 p.estavazia();
+
+class Acao {
+    constructor(tipo, texto) {
+        this.tipo = tipo
+        this.texto = texto
+    }
+}
+const historico = new Pilha()
+
+historico.empilhar(new Acao("inserir", "Olá"))
+historico.empilhar(new Acao("inserir", " turma"))
+historico.empilhar(new Acao("apagar", " turma"))
+
+
+while (!historico.estavazia()) {
+    const acao  = historico.desempilhar()
+    console.log(`Desfazendo: ${acao.tipo} "${acao.texto}"`)
+}
