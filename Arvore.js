@@ -26,6 +26,7 @@ class ArvoreBinaria {
                     atual.esquerda = novoNode;
                     return this;
                 }
+                atual = atual.esquerda;
             } else {
                 if (atual.direita === null) {
                     atual.direita = novoNode;
@@ -79,4 +80,6 @@ bst.adicionar(3);
 bst.adicionar(7);
 bst.adicionar(12);
 bst.adicionar(18);
+
+bst.print()
 
